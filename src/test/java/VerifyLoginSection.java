@@ -1,5 +1,6 @@
 import commonLib.Browser;
 import locator.LocatorLoginSection;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.testng.Assert;
@@ -36,10 +37,12 @@ public class VerifyLoginSection {
 
         try {
             //if the login failed, verify the alert text
-            Assert.assertEquals(Browser.driver.switchTo().alert().getText(),expectedResult);
+            Alert alert = Browser.driver.switchTo().alert();
+            Assert.assertEquals(alert.getText(),expectedResult);
+            alert.accept();
+
         }catch (NoAlertPresentException exception){
             //if the login passed, verify the title of the page
-            //Verify title of the home page
             Assert.assertEquals(Browser.driver.getTitle(),expectedResult);
         }
     }
