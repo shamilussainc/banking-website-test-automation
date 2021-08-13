@@ -5,6 +5,7 @@ public class InputLoginCred {
 //    Enter your email id
 //    Login credentials is allocated to you and mailed at your id
 //    credentials only valid up to 20 days only
-    public static String validUserId = "";
-    public static String validPassword = "";
+//    public static String validUserId = "";
+//    public static String validPassword = "";
+    //now login credentials are provided by dataprovider
 }
