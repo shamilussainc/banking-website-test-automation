@@ -44,6 +44,7 @@ public class VerifyLoginSection {
         }catch (NoAlertPresentException exception){
             //if the login passed, verify the title of the page
             Assert.assertEquals(Browser.driver.getTitle(),expectedResult);
+            Assert.assertEquals(Browser.driver.findElement(By.xpath(LocatorLoginSection.managerId)).getText(),"Manger Id : "+userName);
         }
     }
     @DataProvider(name = "Login_incorrect_credentials")
