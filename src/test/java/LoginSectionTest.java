@@ -10,45 +10,52 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import url.Url;
 import utility.ExcelUtils;
+import utility.Screenshot;
 
-public class VerifyLoginSection {
+public class LoginSectionTest {
+
+    Browser browser = new Browser();
+    Screenshot screenshot = new Screenshot();
 
     @BeforeClass
-    public static void openBrowser(){
-        Browser.openBrowser("Chrome");
-//        Browser.openBrowser("Mozilla");
+    public void openBrowser(){
+        browser.openBrowser("Chrome");
+//      browser.openBrowser("Mozilla");
     }
     @AfterClass
-    public static void closeBrowser(){
-        Browser.driver.quit();
+    public void closeBrowser(){
+        browser.driver.quit();
     }
+
     @Test(priority = 1, dataProvider = "Login_incorrect_credentials")
-    public static void verifyLoginProcess(String userName,String password,String expectedResult){
+    public void verifyLoginProcess(String userName,String password,String expectedResult) throws Exception {
         //go to website
-        Browser.navigate(Url.baseUrl);
+        browser.navigate(Url.baseUrl);
         //input user id
-        Browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).clear();
-        Browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).sendKeys(userName);
+        browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).clear();
+        browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).sendKeys(userName);
         //input password
-        Browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).clear();
-        Browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).sendKeys(password);
+        browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).clear();
+        browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).sendKeys(password);
         //click login button
-        Browser.driver.findElement(By.xpath(LocatorLoginSection.buttonLogin)).click();
+        browser.driver.findElement(By.xpath(LocatorLoginSection.buttonLogin)).click();
 
         try {
             //if the login failed, verify the alert text
-            Alert alert = Browser.driver.switchTo().alert();
+            Alert alert = browser.driver.switchTo().alert();
             Assert.assertEquals(alert.getText(),expectedResult);
             alert.accept();
 
         }catch (NoAlertPresentException exception){
             //if the login passed, verify the title of the page
-            Assert.assertEquals(Browser.driver.getTitle(),expectedResult);
-            Assert.assertEquals(Browser.driver.findElement(By.xpath(LocatorLoginSection.managerId)).getText(),"Manger Id : "+userName);
+            Assert.assertEquals(browser.driver.getTitle(),expectedResult);
+            //verify the manager id in the home page.
+            Assert.assertEquals(browser.driver.findElement(By.xpath(LocatorLoginSection.managerId)).getText(),"Manger Id : "+userName);
+            screenshot.takeSnapShot(browser.driver,"screen-shots/title_and_managerId_verified.png");
         }
     }
     @DataProvider(name = "Login_incorrect_credentials")
-    public Object[][] Authentication() throws Exception{
+    public Object[][] Authentication() {
         ExcelUtils dataconfig= new ExcelUtils("/home/shamil/Documents/test data (do not delete)/Test_data_login_banking_website.xlsx");
         int rows=dataconfig.getRowCount(0);
         Object[][] data=new Object[rows-1][3];
@@ -60,5 +67,4 @@ public class VerifyLoginSection {
         }
         return data;
     }
-
 }

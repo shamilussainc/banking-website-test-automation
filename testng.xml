@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" name="banking website test automation">
         <classes>
-            <class name="VerifyLoginSection"/>
+            <class name="LoginSectionTest"/>
         </classes>
     </test>
 </suite>

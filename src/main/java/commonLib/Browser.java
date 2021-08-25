@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.concurrent.TimeUnit;
 
 public class Browser {
-    public static WebDriver driver;
-    public static WebDriverWait wait;
+    public WebDriver driver;
+    public WebDriverWait wait;
 
-    public static void openBrowser(String bType){
+    public void openBrowser(String bType){
         System.out.println("****************openBrowser********************");
         System.out.println("browser type---"+bType);
         try{
@@ -49,7 +49,7 @@ public class Browser {
         }
     }
 
-    public static void navigate(String url){
+    public void navigate(String url){
         try
         {
             System.out.println("\n");
