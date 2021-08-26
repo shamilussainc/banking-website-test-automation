@@ -13,8 +13,8 @@ public class ChangePasswordAndLoginTest {
 
     @BeforeClass
     public void goToTestScop(){
-        browser.openBrowser("Chrome");
-//      browser.openBrowser("Mozilla");
+//        browser.openBrowser("Chrome");
+        browser.openBrowser("Mozilla");
         browser.navigate(Url.baseUrl);
         login.loginAndGoToHomePage(browser.driver);
     }
