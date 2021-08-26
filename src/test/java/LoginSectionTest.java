@@ -19,8 +19,8 @@ public class LoginSectionTest {
 
     @BeforeClass
     public void openBrowser(){
-        browser.openBrowser("Chrome");
-//      browser.openBrowser("Mozilla");
+//        browser.openBrowser("Chrome");
+      browser.openBrowser("Mozilla");
     }
     @AfterClass
     public void closeBrowser(){
