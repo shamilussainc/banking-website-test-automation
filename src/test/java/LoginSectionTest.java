@@ -16,29 +16,34 @@ public class LoginSectionTest {
 
     Browser browser = new Browser();
     Screenshot screenshot = new Screenshot();
+    LocatorLoginSection locatorLoginSection = new LocatorLoginSection();
+    Url url = new Url();
 
     @BeforeClass
-    public void openBrowser(){
+    public void setUp() {
         browser.openBrowser("Chrome");
 //      browser.openBrowser("Mozilla");
+//        CustomScreenRecorder.startRecord("LoginSectionTest");
+
     }
     @AfterClass
-    public void closeBrowser(){
+    public void tearDown(){
         browser.driver.quit();
+//        CustomScreenRecorder.stopRecord();
     }
 
     @Test(priority = 1, dataProvider = "Login_incorrect_credentials")
     public void verifyLoginProcess(String userName,String password,String expectedResult) throws Exception {
         //go to website
-        browser.navigate(Url.baseUrl);
+        browser.navigate(url.baseUrl);
         //input user id
-        browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).clear();
-        browser.driver.findElement(By.xpath(LocatorLoginSection.inputUserId)).sendKeys(userName);
+        browser.driver.findElement(By.xpath(locatorLoginSection.inputUserId)).clear();
+        browser.driver.findElement(By.xpath(locatorLoginSection.inputUserId)).sendKeys(userName);
         //input password
-        browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).clear();
-        browser.driver.findElement(By.xpath(LocatorLoginSection.inputPassword)).sendKeys(password);
+        browser.driver.findElement(By.xpath(locatorLoginSection.inputPassword)).clear();
+        browser.driver.findElement(By.xpath(locatorLoginSection.inputPassword)).sendKeys(password);
         //click login button
-        browser.driver.findElement(By.xpath(LocatorLoginSection.buttonLogin)).click();
+        browser.driver.findElement(By.xpath(locatorLoginSection.buttonLogin)).click();
 
         try {
             //if the login failed, verify the alert text
@@ -50,13 +55,13 @@ public class LoginSectionTest {
             //if the login passed, verify the title of the page
             Assert.assertEquals(browser.driver.getTitle(),expectedResult);
             //verify the manager id in the home page.
-            Assert.assertEquals(browser.driver.findElement(By.xpath(LocatorLoginSection.managerId)).getText(),"Manger Id : "+userName);
+            Assert.assertEquals(browser.driver.findElement(By.xpath(locatorLoginSection.managerId)).getText(),"Manger Id : "+userName);
             screenshot.takeSnapShot(browser.driver,"screen-shots/title_and_managerId_verified.png");
         }
     }
     @DataProvider(name = "Login_incorrect_credentials")
     public Object[][] Authentication() {
-        ExcelUtils dataconfig= new ExcelUtils("/home/shamil/Documents/test data (do not delete)/Test_data_login_banking_website.xlsx");
+        ExcelUtils dataconfig= new ExcelUtils("data-files/Test_data_login_banking_website.xlsx");
         int rows=dataconfig.getRowCount(0);
         Object[][] data=new Object[rows-1][3];
         for (int i=0;i<rows-1;i++)

@@ -1,9 +1,10 @@
 package locator;
 
 public class LocatorChangePassword {
-    public static String buttonChangePassword = "//a[@href=\"PasswordInput.php\"]";
-    public static String inputOldPassword = "//input[@name=\"oldpassword\"]";
-    public static String inputNewPassword = "//input[@name=\"newpassword\"]";
-    public static String inputConfirmPassword = "//input[@name=\"confirmpassword\"]";
-    public static String buttonSubmit = "//input[@name=\"sub\"]";
+    public String navLinkChangePassword = "//a[@href=\"PasswordInput.php\"]";
+    public String inputOldPassword = "//input[@name=\"oldpassword\"]";
+    public String inputNewPassword = "//input[@name=\"newpassword\"]";
+    public String inputConfirmPassword = "//input[@name=\"confirmpassword\"]";
+    public String buttonSubmit = "//input[@name=\"sub\"]";
+
 }
