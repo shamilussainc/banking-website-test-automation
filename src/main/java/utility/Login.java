@@ -1,10 +1,10 @@
 package utility;
 
 import commonLib.Browser;
-import input.InputLoginCred;
 import locator.LocatorLoginSection;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import url.Url;
 
 public class Login {
@@ -15,6 +15,7 @@ public class Login {
         //gotoLoginpage
         browser.navigate(url.baseUrl);
         //input UserId
+        browser.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorLoginSection.inputUserId)));
         browser.driver.findElement(By.xpath(locatorLoginSection.inputUserId)).clear();
         browser.driver.findElement(By.xpath(locatorLoginSection.inputUserId)).sendKeys(userId);
         //input password

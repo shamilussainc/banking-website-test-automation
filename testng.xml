@@ -3,8 +3,12 @@
 <suite name="All Test Suite">
     <test  verbose="2" name="banking website test automation">
         <classes>
+<!--            <class name="Lambdatest"/>-->
             <class name="LoginSectionTest"/>
             <class name="AddNewCustomerAndAccountTest"/>
+            <class name="DeleteAccountTest"/>
+            <class name="DeleteCustomerTest"/>
+
 <!--            <class name="ChangePasswordAndLoginTest"/>-->
         </classes>
     </test>

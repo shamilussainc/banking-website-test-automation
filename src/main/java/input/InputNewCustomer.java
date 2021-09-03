@@ -10,7 +10,7 @@ public class InputNewCustomer {
     public String state = "Test State";
     public String pin = "123456";
     public String mobileNumber = "1234567890";
-    public String email = "shashi@gmail.com";
+    public String email = "shashikumar@gmail.com";
     public String password = "shashi@123$";
-    public String customerId;
+    public static String customerId;
 }

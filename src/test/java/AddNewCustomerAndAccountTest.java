@@ -2,11 +2,8 @@ import commonLib.Browser;
 import input.InputNewCustomer;
 import input.InputLoginCred;
 import input.InputNewAccount;
-import locator.LocatorDeleteAccount;
-import locator.LocatorDeleteCustomer;
 import locator.LocatorNewAccount;
 import locator.LocatorNewCustomer;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -21,8 +18,6 @@ public class AddNewCustomerAndAccountTest {
     InputLoginCred inputLoginCred = new InputLoginCred();
     LocatorNewCustomer locatorNewCustomer = new LocatorNewCustomer();
     LocatorNewAccount locatorNewAccount = new LocatorNewAccount();
-    LocatorDeleteAccount locatorDeleteAccount = new LocatorDeleteAccount();
-    LocatorDeleteCustomer locatorDeleteCustomer = new LocatorDeleteCustomer();
     InputNewCustomer inputNewCustomer = new InputNewCustomer();
     InputNewAccount inputNewAccount = new InputNewAccount();
 
@@ -57,7 +52,7 @@ public class AddNewCustomerAndAccountTest {
         String actualResult = browser.driver.findElement(By.xpath(locatorNewCustomer.messageSuccessCustomerReg)).getText();
         Assert.assertEquals(actualResult, expectedText);
 
-        inputNewCustomer.customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
+        InputNewCustomer.customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
     }
 
     @Test(priority = 1)
@@ -65,41 +60,14 @@ public class AddNewCustomerAndAccountTest {
 
         browser.driver.findElement(By.xpath(locatorNewAccount.navLinkNewAccount)).click();
 
-        browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(inputNewCustomer.customerId);
+        browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(InputNewCustomer.customerId);
         Select accountType = new Select(browser.driver.findElement(By.xpath(locatorNewAccount.selectAccountType)));
         accountType.selectByValue(inputNewAccount.accountType);
         browser.driver.findElement(By.xpath(locatorNewAccount.initialDeposit)).sendKeys(inputNewAccount.initialDeposit);
         browser.driver.findElement(By.xpath(locatorNewAccount.buttonSubmit)).click();
         Assert.assertTrue(browser.driver.findElement(By.xpath(locatorNewAccount.messageSuccessAccountReg)).isDisplayed());
 
-        inputNewAccount.accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
-    }
-
-    @Test(priority = 2)
-    public void verifyDeleteAccount(){
-        browser.driver.findElement(By.xpath(locatorDeleteAccount.navLinkDeleteAccount)).click();
-        browser.driver.findElement(By.xpath(locatorDeleteAccount.inputAccountId)).sendKeys(inputNewAccount.accountId);
-        browser.driver.findElement(By.xpath(locatorDeleteAccount.buttonSubmit)).click();
-        browser.driver.switchTo().alert().accept();
-        Alert alert = browser.driver.switchTo().alert();
-        String expectedAlertText = "Account Deleted Sucessfully";
-        String actualAlertText= alert.getText();
-        Assert.assertEquals(actualAlertText,expectedAlertText);
-        alert.accept();
-
-    }
-
-    @Test(priority=3)
-    public void verifyDeleteCustomer(){
-        browser.driver.findElement(By.xpath(locatorDeleteCustomer.navLinkDeleteCustomer)).click();
-        browser.driver.findElement(By.xpath(locatorDeleteCustomer.inputCustomerId)).sendKeys(inputNewCustomer.customerId);
-        browser.driver.findElement(By.xpath(locatorDeleteCustomer.buttonSubmit)).click();
-        browser.driver.switchTo().alert().accept();
-        Alert alert = browser.driver.switchTo().alert();
-        String expectedAlertText = "Customer deleted Successfully";
-        String actualAlertText= alert.getText();
-        Assert.assertEquals(actualAlertText,expectedAlertText);
-        alert.accept();
+        InputNewAccount.accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
     }
 
 }
