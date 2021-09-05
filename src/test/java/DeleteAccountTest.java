@@ -10,13 +10,13 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utility.Login;
+import utility.WebAppMethods;
 
 //SM6
 //Delete Account & check  Mini Statement, Balance Enquiry
 public class DeleteAccountTest {
     Browser browser = new Browser();
-    Login login = new Login();
+    WebAppMethods webAppMethods = new WebAppMethods();
 
     LocatorDeleteAccount locatorDeleteAccount = new LocatorDeleteAccount();
     LocatorMiniStatement locatorMiniStatement = new LocatorMiniStatement();
@@ -29,12 +29,15 @@ public class DeleteAccountTest {
     @BeforeClass()
     public void setBrowser(){
         browser.openBrowser("Chrome");
-        login.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
+        webAppMethods.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
+        webAppMethods.createCustomer(browser);
+        webAppMethods.createAccount(browser);
     }
 
     @AfterClass()
     public void tearDown(){
         browser.driver.close();
+        webAppMethods.deleteCustomer(browser);
     }
 
 //Verify confirmation message is shown on deletion of an account

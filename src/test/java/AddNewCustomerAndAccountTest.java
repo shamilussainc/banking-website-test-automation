@@ -10,11 +10,11 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utility.Login;
+import utility.WebAppMethods;
 
 public class AddNewCustomerAndAccountTest {
     Browser browser = new Browser();
-    Login login = new Login();
+    WebAppMethods webAppMethods = new WebAppMethods();
     InputLoginCred inputLoginCred = new InputLoginCred();
     LocatorNewCustomer locatorNewCustomer = new LocatorNewCustomer();
     LocatorNewAccount locatorNewAccount = new LocatorNewAccount();
@@ -25,11 +25,13 @@ public class AddNewCustomerAndAccountTest {
     @BeforeClass
     public void setBrowser(){
         browser.openBrowser("Chrome");
-        login.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
+        webAppMethods.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
     }
 
     @AfterClass
     public void tearDown(){
+        webAppMethods.deleteAccount(browser);
+        webAppMethods.deleteCustomer(browser);
         browser.driver.quit();
     }
 

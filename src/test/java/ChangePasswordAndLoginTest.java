@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import utility.Login;
+import utility.WebAppMethods;
 
 
 /**
@@ -20,13 +20,13 @@ public class ChangePasswordAndLoginTest {
     Browser browser = new Browser();
     LocatorChangePassword locatorChangePassword = new LocatorChangePassword();
     InputLoginCred inputLoginCred = new InputLoginCred();
-    Login login = new Login();
+    WebAppMethods webAppMethods = new WebAppMethods();
 
     @BeforeClass
     public void goToTestScop(){
         browser.openBrowser("Chrome");
 //        browser.openBrowser("Mozilla");
-        login.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
+        webAppMethods.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
     }
     @AfterClass
     public void tearDown(){
@@ -79,7 +79,7 @@ public class ChangePasswordAndLoginTest {
 
     @Test(priority = 2)
     public void verifyLoginWithNewPassword(){
-        login.login(browser,inputLoginCred.validUserId,inputLoginCred.validPasswordNew);
+        webAppMethods.login(browser,inputLoginCred.validUserId,inputLoginCred.validPasswordNew);
 
         //verify that user redirected to manager home page
         String expectedUrl = "http://www.demo.guru99.com/V4/manager/Managerhomepage.php";

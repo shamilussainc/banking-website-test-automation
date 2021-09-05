@@ -9,6 +9,7 @@
             <class name="DeleteAccountTest"/>
             <class name="DeleteCustomerTest"/>
 
+
 <!--            <class name="ChangePasswordAndLoginTest"/>-->
         </classes>
     </test>
