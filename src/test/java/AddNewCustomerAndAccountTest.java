@@ -30,8 +30,8 @@ public class AddNewCustomerAndAccountTest {
 
     @AfterClass
     public void tearDown(){
-        webAppMethods.deleteAccount(browser);
-        webAppMethods.deleteCustomer(browser);
+        webAppMethods.deleteAccount(browser,inputNewAccount.accountId);
+        webAppMethods.deleteCustomer(browser,inputNewCustomer.customerId);
         browser.driver.quit();
     }
 
@@ -54,7 +54,7 @@ public class AddNewCustomerAndAccountTest {
         String actualResult = browser.driver.findElement(By.xpath(locatorNewCustomer.messageSuccessCustomerReg)).getText();
         Assert.assertEquals(actualResult, expectedText);
 
-        InputNewCustomer.customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
+        inputNewCustomer.customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
     }
 
     @Test(priority = 1)
@@ -62,14 +62,14 @@ public class AddNewCustomerAndAccountTest {
 
         browser.driver.findElement(By.xpath(locatorNewAccount.navLinkNewAccount)).click();
 
-        browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(InputNewCustomer.customerId);
+        browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(inputNewCustomer.customerId);
         Select accountType = new Select(browser.driver.findElement(By.xpath(locatorNewAccount.selectAccountType)));
         accountType.selectByValue(inputNewAccount.accountType);
         browser.driver.findElement(By.xpath(locatorNewAccount.initialDeposit)).sendKeys(inputNewAccount.initialDeposit);
         browser.driver.findElement(By.xpath(locatorNewAccount.buttonSubmit)).click();
         Assert.assertTrue(browser.driver.findElement(By.xpath(locatorNewAccount.messageSuccessAccountReg)).isDisplayed());
 
-        InputNewAccount.accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
+        inputNewAccount.accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
     }
 
 }

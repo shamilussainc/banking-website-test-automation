@@ -12,5 +12,5 @@ public class InputNewCustomer {
     public String mobileNumber = "1234567890";
     public String email = "shashikumarpk@gmail.com";
     public String password = "shashi@123$";
-    public static String customerId;
+    public String customerId;
 }

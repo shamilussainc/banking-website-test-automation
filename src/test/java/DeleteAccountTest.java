@@ -1,6 +1,7 @@
 import commonLib.Browser;
 import input.InputLoginCred;
 import input.InputNewAccount;
+import input.InputNewCustomer;
 import locator.LocatorBalanceEnquiry;
 import locator.LocatorCustomisedStatement;
 import locator.LocatorDeleteAccount;
@@ -24,27 +25,29 @@ public class DeleteAccountTest {
     LocatorCustomisedStatement locatorCustomisedStatement = new LocatorCustomisedStatement();
 
     InputLoginCred inputLoginCred = new InputLoginCred();
+    InputNewCustomer customer =new InputNewCustomer();
+    InputNewAccount account = new InputNewAccount();
 
 
     @BeforeClass()
     public void setBrowser(){
         browser.openBrowser("Chrome");
         webAppMethods.login(browser,inputLoginCred.validUserId,inputLoginCred.validPassword);
-        webAppMethods.createCustomer(browser);
-        webAppMethods.createAccount(browser);
+        customer.customerId = webAppMethods.createCustomer(browser);
+        account.accountId = webAppMethods.createAccount(browser,customer.customerId);
     }
 
     @AfterClass()
     public void tearDown(){
+        webAppMethods.deleteCustomer(browser, customer.customerId);
         browser.driver.close();
-        webAppMethods.deleteCustomer(browser);
     }
 
 //Verify confirmation message is shown on deletion of an account
     @Test()
     public void verifyConfirmationMessage  (){
         browser.driver.findElement(By.xpath(locatorDeleteAccount.navLinkDeleteAccount)).click();
-        browser.driver.findElement(By.xpath(locatorDeleteAccount.inputAccountId)).sendKeys(InputNewAccount.accountId);
+        browser.driver.findElement(By.xpath(locatorDeleteAccount.inputAccountId)).sendKeys(account.accountId);
         browser.driver.findElement(By.xpath(locatorDeleteAccount.buttonSubmit)).click();
 
         String actualAlertText = browser.driver.switchTo().alert().getText();
@@ -70,7 +73,7 @@ public class DeleteAccountTest {
     @Test(priority = 2)
     public void verifyMiniStatementForDeletedAccount(){
         browser.driver.findElement(By.xpath(locatorMiniStatement.navItemMiniStatement)).click();
-        browser.driver.findElement(By.xpath(locatorMiniStatement.inputAccountNum)).sendKeys(InputNewAccount.accountId);
+        browser.driver.findElement(By.xpath(locatorMiniStatement.inputAccountNum)).sendKeys(account.accountId);
         browser.driver.findElement(By.xpath(locatorMiniStatement.buttonSubmit)).click();
 
         String expectedAlertText = "Account does not exist";
@@ -82,7 +85,7 @@ public class DeleteAccountTest {
     @Test(priority = 3)
     public void verifyBalanceForDeletedAccount(){
         browser.driver.findElement(By.xpath(locatorBalanceEnquiry.navItemBalanceEnquiry)).click();
-        browser.driver.findElement(By.xpath(locatorBalanceEnquiry.inputAccountNum)).sendKeys(InputNewAccount.accountId);
+        browser.driver.findElement(By.xpath(locatorBalanceEnquiry.inputAccountNum)).sendKeys(account.accountId);
         browser.driver.findElement(By.xpath(locatorBalanceEnquiry.buttonSubmit)).click();
 
         String expectedAlertText = "Account does not exist";
@@ -99,7 +102,7 @@ public class DeleteAccountTest {
     @Test(priority = 4)
     public void verifyCustomizedStatement(){
         browser.driver.findElement(By.xpath(locatorCustomisedStatement.navItemCustomisedStatement)).click();
-        browser.driver.findElement(By.xpath(locatorCustomisedStatement.inputAccountNum)).sendKeys(InputNewAccount.accountId);
+        browser.driver.findElement(By.xpath(locatorCustomisedStatement.inputAccountNum)).sendKeys(account.accountId);
         browser.driver.findElement(By.xpath(locatorCustomisedStatement.inputFromDate)).sendKeys("13/8/2021");
         browser.driver.findElement(By.xpath(locatorCustomisedStatement.inputToDate)).sendKeys("10/08/2021");
         browser.driver.findElement(By.xpath(locatorCustomisedStatement.inputMinTransaction)).sendKeys("1000");

@@ -9,4 +9,5 @@ public class LocatorCustomisedStatement {
     public String inputNumOfTransaction = "//input[@type=\"text\"][@name=\"numtransaction\"]";
     public String buttonSubmit = "//input[@type=\"submit\"][@name=\"AccSubmit\"]";
 
+    public String secondRowCustomStatement = "//table[@id=\"customstmt\"]/tbody/tr[3]";
 }

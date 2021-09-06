@@ -40,13 +40,13 @@ public class WebAppMethods {
             browser.driver.findElement(By.xpath(locatorLoginSection.buttonLogin)).click();
         }catch (Exception e){
             System.out.println("Login failed");
-            System.out.println(e);
+            e.printStackTrace();
         }
 
     }
 
 
-    public void createCustomer(Browser browser){
+    public String createCustomer(Browser browser){
         try {
             browser.driver.findElement(By.xpath(locatorNewCustomer.navLinkNewCustomer)).click();
             browser.driver.findElement(By.xpath(locatorNewCustomer.inputCustomerName)).sendKeys(inputNewCustomer.customerName);
@@ -61,20 +61,23 @@ public class WebAppMethods {
             browser.driver.findElement(By.xpath(locatorNewCustomer.inputPassword)).sendKeys(inputNewCustomer.password);
             browser.driver.findElement(By.xpath(locatorNewCustomer.buttonSubmit)).click();
 
-            InputNewCustomer.customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
-            System.out.println(InputNewCustomer.customerId);
+            String customerId = browser.driver.findElement(By.xpath(locatorNewCustomer.customerId)).getText();
+            System.out.println("Customer created with id : "+customerId);
+
+            return customerId;
 
         }catch (Exception e){
             System.out.println("Customer creation failed");
-            System.out.println(e);
+            e.printStackTrace();
         }
+        return null;
     }
 
-    public void deleteCustomer(Browser browser){
+    public void deleteCustomer(Browser browser, String customerId){
 
         try {
             browser.driver.findElement(By.xpath(locatorDeleteCustomer.navLinkDeleteCustomer)).click();
-            browser.driver.findElement(By.xpath(locatorDeleteCustomer.inputCustomerId)).sendKeys(InputNewCustomer.customerId);
+            browser.driver.findElement(By.xpath(locatorDeleteCustomer.inputCustomerId)).sendKeys(customerId);
             browser.driver.findElement(By.xpath(locatorDeleteCustomer.buttonSubmit)).click();
             String expectedAlertText = "Do you really want to delete this Customer?";
             String actualAlertText = browser.driver.switchTo().alert().getText();
@@ -85,39 +88,40 @@ public class WebAppMethods {
             String actualAlert= alert.getText();
             Assert.assertEquals(actualAlert,expectedAlert);
             alert.accept();
-
+            System.out.println("Customer with id "+customerId+" deleted");
         }catch (Exception e){
             System.out.println("Customer deletion failed");
-            System.out.println(e);
+            e.printStackTrace();
         }
 
     }
 
-    public void createAccount(Browser browser){
+    public String createAccount(Browser browser,String customerId){
 
         try {
             JavascriptExecutor js = (JavascriptExecutor)browser.driver;
             WebElement element = browser.driver.findElement(By.xpath(locatorNewAccount.navLinkNewAccount));
             js.executeScript("arguments[0].click();", element);
-            browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(InputNewCustomer.customerId);
+            browser.driver.findElement(By.xpath(locatorNewAccount.inputCustomerId)).sendKeys(customerId);
             Select accountType = new Select(browser.driver.findElement(By.xpath(locatorNewAccount.selectAccountType)));
             accountType.selectByValue(inputNewAccount.accountType);
             browser.driver.findElement(By.xpath(locatorNewAccount.initialDeposit)).sendKeys(inputNewAccount.initialDeposit);
             browser.driver.findElement(By.xpath(locatorNewAccount.buttonSubmit)).click();
 
-            InputNewAccount.accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
-            System.out.println(InputNewAccount.accountId);
+            String accountId = browser.driver.findElement(By.xpath(locatorNewAccount.accountId)).getText();
+            System.out.println("Account created with id : "+accountId);
+            return accountId;
         }catch (Exception e){
             System.out.println("Account creation failed!");
-            System.out.println(e);
+            e.printStackTrace();
         }
-
+        return null;
     }
 
-    public void deleteAccount(Browser browser){
+    public void deleteAccount(Browser browser,String accountId){
         try{
             browser.driver.findElement(By.xpath(locatorDeleteAccount.navLinkDeleteAccount)).click();
-            browser.driver.findElement(By.xpath(locatorDeleteAccount.inputAccountId)).sendKeys(InputNewAccount.accountId);
+            browser.driver.findElement(By.xpath(locatorDeleteAccount.inputAccountId)).sendKeys(accountId);
             browser.driver.findElement(By.xpath(locatorDeleteAccount.buttonSubmit)).click();
 
             String actualAlertText = browser.driver.switchTo().alert().getText();
@@ -128,10 +132,10 @@ public class WebAppMethods {
             String actualMessage = browser.driver.switchTo().alert().getText();
             Assert.assertEquals(actualMessage,expectedMessage);
             browser.driver.switchTo().alert().accept();
-
+            System.out.println("Account with id "+accountId+" deleted");
         }catch (Exception e){
             System.out.println("Account deletion failed");
-            System.out.println(e);
+            e.printStackTrace();
         }
     }
 
