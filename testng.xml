@@ -8,9 +8,8 @@
             <class name="AddNewCustomerAndAccountTest"/>
             <class name="DeleteAccountTest"/>
             <class name="DeleteCustomerTest"/>
-            <class name="FundTransfer"/>
-
-
+            <class name="FundTransferTest"/>
+            <class name="EditCustomerTest"/>
 <!--            <class name="ChangePasswordAndLoginTest"/>-->
         </classes>
     </test>
