@@ -25,60 +25,42 @@ td,th {border:1px solid #009;padding:.25em .5em}
 <body>
 <table cellspacing="0" cellpadding="0" class="testOverview">
 <tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em"><a href="#t1">banking website test automation</a></td><td class="numi">18</td><td class="numi">18</td><td class="numi">0</td><td class="numi_attn">6</td><td class="numi">188.9 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">banking website test automation</a></td><td class="numi">26</td><td class="numi">26</td><td class="numi">0</td><td class="numi_attn">4</td><td class="numi">230.5 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
 <tr id="t1"><th colspan="5">banking website test automation &#8212; failed</th></tr>
-<tr class="failedodd"><td>AddNewCustomerAndAccountTest</td><td><a href="#m1"><b>verifyAddNewAccountToNewCustomer</b>  </a></td><td class="numi">1</td><td>1631040361537</td><td class="numi">1280</td></tr>
-<tr class="failedeven"><td>FundTransferTest</td><td><a href="#m2"><b>verifyFundTransfer</b>  </a></td><td class="numi">1</td><td>1631040449375</td><td class="numi">1080</td></tr>
-<tr class="failedodd"><td>AddNewCustomerAndAccountTest</td><td><a href="#m3"><b>verifyAddCustomer</b>  </a></td><td class="numi">1</td><td>1631040357043</td><td class="numi">4424</td></tr>
-<tr class="failedeven"><td>DeleteCustomerTest</td><td><a href="#m4"><b>verifyEditDeletedCustomer</b>  </a></td><td class="numi">1</td><td>1631040428475</td><td class="numi">1722</td></tr>
-<tr class="failedodd"><td>EditCustomerTest</td><td><a href="#m5"><b>verifyEditCustomer</b>  </a></td><td class="numi">1</td><td>1631040498231</td><td class="numi">1132</td></tr>
-<tr class="failedeven"><td>FundTransferTest</td><td><a href="#m6"><b>verifyPageReloadAfterFundTransfer</b>  </a></td><td class="numi">1</td><td>1631040450461</td><td class="numi">1050</td></tr>
+<tr class="failedodd"><td rowspan="4">WithdrawalTest</td><td><a href="#m1"><b>verifyWithdrawalWithLessBalance</b>  </a></td><td class="numi">1</td><td>1631097605255</td><td class="numi">1127</td></tr><tr class="failedodd"><td><a href="#m2"><b>verifyMiniStatement</b>  </a></td><td class="numi">1</td><td>1631097606383</td><td class="numi">1581</td></tr><tr class="failedodd"><td><a href="#m3"><b>verifyWithdrawal</b>  </a></td><td class="numi">1</td><td>1631097603957</td><td class="numi">1268</td></tr><tr class="failedodd"><td><a href="#m4"><b>verifyBalance</b>  </a></td><td class="numi">1</td><td>1631097607968</td><td class="numi">1035</td></tr>
 <tr><th colspan="5">banking website test automation &#8212; passed</th></tr>
-<tr class="passedodd"><td>LoginSectionTest</td><td><a href="#m7"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631040326368</td><td class="numi">22881</td></tr>
-<tr class="passedeven"><td>DeleteCustomerTest</td><td><a href="#m8"><b>verifyDeleteCustomer</b>  </a></td><td class="numi">1</td><td>1631040423812</td><td class="numi">4662</td></tr>
-<tr class="passedodd"><td>FundTransferTest</td><td><a href="#m9"><b>fundTransferToSameAccount</b>  </a></td><td class="numi">1</td><td>1631040475868</td><td class="numi">5109</td></tr>
-<tr class="passedeven"><td>DeleteAccountTest</td><td><a href="#m10"><b>verifyMiniStatementForDeletedAccount</b>  </a></td><td class="numi">1</td><td>1631040385849</td><td class="numi">3880</td></tr>
-<tr class="passedodd"><td>FundTransferTest</td><td><a href="#m11"><b>verifyFundTransferWhenAccountBalanceLow</b>  </a></td><td class="numi">1</td><td>1631040455971</td><td class="numi">3833</td></tr>
-<tr class="passedeven"><td>DeleteCustomerTest</td><td><a href="#m12"><b>verifyConfirmationMessage</b>  </a></td><td class="numi">1</td><td>1631040417259</td><td class="numi">2246</td></tr>
-<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m13"><b>verifySystemBehaviour</b>  </a></td><td class="numi">1</td><td>1631040384429</td><td class="numi">1412</td></tr>
-<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m14"><b>verifyCustomizedStatement</b>  </a></td><td class="numi">1</td><td>1631040451514</td><td class="numi">4456</td></tr>
-<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m15"><b>verifyCustomizedStatement</b>  </a></td><td class="numi">1</td><td>1631040392978</td><td class="numi">7575</td></tr>
-<tr class="passedeven"><td rowspan="2">LoginSectionTest</td><td><a href="#m16"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631040326368</td><td class="numi">22881</td></tr><tr class="passedeven"><td><a href="#m17"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631040326368</td><td class="numi">22881</td></tr>
-<tr class="passedodd"><td>DeleteCustomerTest</td><td><a href="#m18"><b>verifyDeleteNonExistingCustomer</b>  </a></td><td class="numi">1</td><td>1631040430204</td><td class="numi">1372</td></tr>
-<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m19"><b>verifyFundTransferWithWrongAccountNo</b>  </a></td><td class="numi">1</td><td>1631040459813</td><td class="numi">10445</td></tr>
-<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m20"><b>verifyConfirmationMessage</b>  </a></td><td class="numi">1</td><td>1631040382483</td><td class="numi">1943</td></tr>
-<tr class="passedeven"><td>LoginSectionTest</td><td><a href="#m21"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631040326368</td><td class="numi">22881</td></tr>
-<tr class="passedodd"><td>FundTransferTest</td><td><a href="#m22"><b>verifyFundTransferToAbsentAccount</b>  </a></td><td class="numi">1</td><td>1631040470259</td><td class="numi">5608</td></tr>
-<tr class="passedeven"><td>DeleteAccountTest</td><td><a href="#m23"><b>verifyBalanceForDeletedAccount</b>  </a></td><td class="numi">1</td><td>1631040389732</td><td class="numi">3242</td></tr>
-<tr class="passedodd"><td>DeleteCustomerTest</td><td><a href="#m24"><b>verifyDeletionOfCustomerHavingAccount</b>  </a></td><td class="numi">1</td><td>1631040419510</td><td class="numi">4301</td></tr>
+<tr class="passedodd"><td>DepositTest</td><td><a href="#m5"><b>verifyReloadAfterDeposit</b>  </a></td><td class="numi">1</td><td>1631097585740</td><td class="numi">1617</td></tr>
+<tr class="passedeven"><td>AddNewCustomerAndAccountTest</td><td><a href="#m6"><b>verifyAddCustomer</b>  </a></td><td class="numi">1</td><td>1631097435847</td><td class="numi">3901</td></tr>
+<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m7"><b>verifyBalanceForDeletedAccount</b>  </a></td><td class="numi">1</td><td>1631097463902</td><td class="numi">2688</td></tr>
+<tr class="passedeven"><td rowspan="2">FundTransferTest</td><td><a href="#m8"><b>verifyFundTransferWhenAccountBalanceLow</b>  </a></td><td class="numi">1</td><td>1631097522460</td><td class="numi">2881</td></tr><tr class="passedeven"><td><a href="#m9"><b>verifyFundTransferWithWrongAccountNo</b>  </a></td><td class="numi">1</td><td>1631097525342</td><td class="numi">7843</td></tr>
+<tr class="passedodd"><td>LoginSectionTest</td><td><a href="#m10"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631097412107</td><td class="numi">16707</td></tr>
+<tr class="passedeven"><td>DepositTest</td><td><a href="#m11"><b>verifyDepositToAnotherAccount</b>  </a></td><td class="numi">1</td><td>1631097582873</td><td class="numi">2866</td></tr>
+<tr class="passedodd"><td>EditCustomerTest</td><td><a href="#m12"><b>verifyEditCustomer</b>  </a></td><td class="numi">1</td><td>1631097560846</td><td class="numi">5597</td></tr>
+<tr class="passedeven"><td rowspan="2">DeleteAccountTest</td><td><a href="#m13"><b>verifyMiniStatementForDeletedAccount</b>  </a></td><td class="numi">1</td><td>1631097461429</td><td class="numi">2471</td></tr><tr class="passedeven"><td><a href="#m14"><b>verifySystemBehaviour</b>  </a></td><td class="numi">1</td><td>1631097460228</td><td class="numi">1198</td></tr>
+<tr class="passedodd"><td>FundTransferTest</td><td><a href="#m15"><b>verifyCustomizedStatement</b>  </a></td><td class="numi">1</td><td>1631097519602</td><td class="numi">2852</td></tr>
+<tr class="passedeven"><td>AddNewCustomerAndAccountTest</td><td><a href="#m16"><b>verifyAddNewAccountToNewCustomer</b>  </a></td><td class="numi">1</td><td>1631097439749</td><td class="numi">2524</td></tr>
+<tr class="passedodd"><td rowspan="2">LoginSectionTest</td><td><a href="#m17"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631097412107</td><td class="numi">16707</td></tr><tr class="passedodd"><td><a href="#m18"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631097412107</td><td class="numi">16707</td></tr>
+<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m19"><b>verifyFundTransferToAbsentAccount</b>  </a></td><td class="numi">1</td><td>1631097533186</td><td class="numi">4806</td></tr>
+<tr class="passedodd"><td>DeleteCustomerTest</td><td><a href="#m20"><b>verifyConfirmationMessage</b>  </a></td><td class="numi">1</td><td>1631097483440</td><td class="numi">1289</td></tr>
+<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m21"><b>fundTransferToSameAccount</b>  </a></td><td class="numi">1</td><td>1631097537994</td><td class="numi">5039</td></tr>
+<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m22"><b>verifyCustomizedStatement</b>  </a></td><td class="numi">1</td><td>1631097466591</td><td class="numi">4410</td></tr>
+<tr class="passedeven"><td>DeleteCustomerTest</td><td><a href="#m23"><b>verifyDeletionOfCustomerHavingAccount</b>  </a></td><td class="numi">1</td><td>1631097484730</td><td class="numi">4477</td></tr>
+<tr class="passedodd"><td>DeleteAccountTest</td><td><a href="#m24"><b>verifyConfirmationMessage</b>  </a></td><td class="numi">1</td><td>1631097458903</td><td class="numi">1324</td></tr>
+<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m25"><b>verifyPageReloadAfterFundTransfer</b>  </a></td><td class="numi">1</td><td>1631097517912</td><td class="numi">1686</td></tr>
+<tr class="passedodd"><td rowspan="2">DeleteCustomerTest</td><td><a href="#m26"><b>verifyDeleteNonExistingCustomer</b>  </a></td><td class="numi">1</td><td>1631097496158</td><td class="numi">2066</td></tr><tr class="passedodd"><td><a href="#m27"><b>verifyEditDeletedCustomer</b>  </a></td><td class="numi">1</td><td>1631097493614</td><td class="numi">2537</td></tr>
+<tr class="passedeven"><td>FundTransferTest</td><td><a href="#m28"><b>verifyFundTransfer</b>  </a></td><td class="numi">1</td><td>1631097513921</td><td class="numi">3990</td></tr>
+<tr class="passedodd"><td>DeleteCustomerTest</td><td><a href="#m29"><b>verifyDeleteCustomer</b>  </a></td><td class="numi">1</td><td>1631097489210</td><td class="numi">4400</td></tr>
+<tr class="passedeven"><td>LoginSectionTest</td><td><a href="#m30"><b>verifyLoginProcess</b>  </a></td><td class="numi">4</td><td>1631097412107</td><td class="numi">16707</td></tr>
 </table>
 <h1>banking website test automation</h1>
-<h2 id="m1">DeleteCustomerTest:verifyEditDeletedCustomer</h2>
+<h2 id="m1">WithdrawalTest:verifyMiniStatement</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;EditCustomer.php&quot;&gt;...&lt;/a&gt; is not clickable at point (120, 384). Other element would receive the click: &lt;td&gt;...&lt;/td&gt;
-  (Session info: headless chrome=92.0.4515.131)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;alice&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.8.0-63-generic&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.4VXOKH}, goog:chromeOptions: {debuggerAddress: localhost:40901}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2e63cd250a9414080b02eb5d61f00006
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at DeleteCustomerTest.verifyEditDeletedCustomer(DeleteCustomerTest.java:83)
+<div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at WithdrawalTest.verifyMiniStatement(WithdrawalTest.java:67)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -109,29 +91,11 @@ Session ID: 2e63cd250a9414080b02eb5d61f00006
 </div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">AddNewCustomerAndAccountTest:verifyAddNewAccountToNewCustomer</h2>
+<h2 id="m2">WithdrawalTest:verifyBalance</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;addAccount.php&quot;&gt;...&lt;/a&gt; is not clickable at point (120, 458). Other element would receive the click: &lt;td colspan=&quot;2&quot;&gt;...&lt;/td&gt;
-  (Session info: headless chrome=92.0.4515.131)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;alice&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.8.0-63-generic&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.s885by}, goog:chromeOptions: {debuggerAddress: localhost:40067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b0f0895c7d8acfc2680723408689bef6
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at AddNewCustomerAndAccountTest.verifyAddNewAccountToNewCustomer(AddNewCustomerAndAccountTest.java:63)
+<div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at WithdrawalTest.verifyBalance(WithdrawalTest.java:77)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -162,29 +126,12 @@ Session ID: b0f0895c7d8acfc2680723408689bef6
 </div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">EditCustomerTest:verifyEditCustomer</h2>
+<h2 id="m3">WithdrawalTest:verifyWithdrawal</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;EditCustomer.php&quot;&gt;...&lt;/a&gt; is not clickable at point (120, 384). Other element would receive the click: &lt;td&gt;...&lt;/td&gt;
-  (Session info: headless chrome=92.0.4515.131)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;alice&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.8.0-63-generic&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.xwakKn}, goog:chromeOptions: {debuggerAddress: localhost:35937}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: f8478dcda250c9ccbd476f71664131db
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at EditCustomerTest.verifyEditCustomer(EditCustomerTest.java:39)
+<div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at utility.WebAppMethods.withdrew(WebAppMethods.java:147)
+	at WithdrawalTest.verifyWithdrawal(WithdrawalTest.java:45)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -215,26 +162,12 @@ Session ID: f8478dcda250c9ccbd476f71664131db
 </div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">AddNewCustomerAndAccountTest:verifyAddCustomer</h2>
+<h2 id="m4">WithdrawalTest:verifyWithdrawalWithLessBalance</h2>
 <div>
-<div class="stacktrace">org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Customer could not be added !!}
-  (Session info: headless chrome=92.0.4515.131): Customer could not be added !!
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;alice&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.8.0-63-generic&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.s885by}, goog:chromeOptions: {debuggerAddress: localhost:40067}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b0f0895c7d8acfc2680723408689bef6
-*** Element info: {Using=xpath, value=//p[@class=&quot;heading3&quot;][@align=&quot;center&quot;]}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at AddNewCustomerAndAccountTest.verifyAddCustomer(AddNewCustomerAndAccountTest.java:54)
+<div class="stacktrace">java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+	at utility.WebAppMethods.withdrew(WebAppMethods.java:147)
+	at WithdrawalTest.verifyWithdrawalWithLessBalance(WithdrawalTest.java:56)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -265,104 +198,78 @@ Session ID: b0f0895c7d8acfc2680723408689bef6
 </div>
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">FundTransferTest:verifyPageReloadAfterFundTransfer</h2>
-<div>
-<div class="stacktrace">java.lang.AssertionError: expected [http://www.demo.guru99.com/V4/manager/FundTransInput.php] but found [http://www.demo.guru99.com/V4/manager/AccCreateMsg.php?aid=97120]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-	at org.testng.Assert.assertEquals(Assert.java:122)
-	at org.testng.Assert.assertEquals(Assert.java:629)
-	at org.testng.Assert.assertEquals(Assert.java:639)
-	at FundTransferTest.verifyPageReloadAfterFundTransfer(FundTransferTest.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</div>
-</div>
+<h2 id="m5">DepositTest:verifyReloadAfterDeposit</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m6">FundTransferTest:verifyFundTransfer</h2>
-<div>
-<div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;FundTransInput.php&quot;&gt;...&lt;/a&gt; is not clickable at point (120, 581). Other element would receive the click: &lt;td&gt;...&lt;/td&gt;
-  (Session info: headless chrome=92.0.4515.131)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;alice&apos;, ip: &apos;192.168.43.142&apos;, os.name: &apos;Linux&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;5.8.0-63-generic&apos;, java.version: &apos;15&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: /tmp/.com.google.Chrome.vzCYtC}, goog:chromeOptions: {debuggerAddress: localhost:34985}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 9de3aa58b8e38830e5b5a514deeca565
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at FundTransferTest.verifyFundTransfer(FundTransferTest.java:47)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:794)
-	at org.testng.TestRunner.run(TestRunner.java:596)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-	at org.testng.TestNG.runSuites(TestNG.java:1063)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</div>
-</div>
+<h2 id="m6">AddNewCustomerAndAccountTest:verifyAddCustomer</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m7">FundTransferTest:verifyCustomizedStatement</h2>
+<h2 id="m7">DeleteAccountTest:verifyBalanceForDeletedAccount</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m8">DeleteAccountTest:verifyCustomizedStatement</h2>
+<h2 id="m8">FundTransferTest:verifyFundTransferWhenAccountBalanceLow</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m9">LoginSectionTest:verifyLoginProcess</h2>
+<h2 id="m9">FundTransferTest:verifyFundTransferWithWrongAccountNo</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">LoginSectionTest:verifyLoginProcess</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>mngr485952</td>
+<td>123456&amp;</td>
+<td>User or Password is not valid</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">DepositTest:verifyDepositToAnotherAccount</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">EditCustomerTest:verifyEditCustomer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">DeleteAccountTest:verifyMiniStatementForDeletedAccount</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">DeleteAccountTest:verifySystemBehaviour</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">FundTransferTest:verifyCustomizedStatement</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">AddNewCustomerAndAccountTest:verifyAddNewAccountToNewCustomer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">LoginSectionTest:verifyLoginProcess</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>mngr485952</td>
+<td>kdfifenejk</td>
+<td>User or Password is not valid</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">LoginSectionTest:verifyLoginProcess</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>mngr350709</td>
+<td>kdfifenejk</td>
+<td>User or Password is not valid</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">FundTransferTest:verifyFundTransferToAbsentAccount</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">DeleteCustomerTest:verifyConfirmationMessage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">FundTransferTest:fundTransferToSameAccount</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">DeleteAccountTest:verifyCustomizedStatement</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">DeleteCustomerTest:verifyDeletionOfCustomerHavingAccount</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">DeleteAccountTest:verifyConfirmationMessage</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">FundTransferTest:verifyPageReloadAfterFundTransfer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m26">DeleteCustomerTest:verifyDeleteNonExistingCustomer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m27">DeleteCustomerTest:verifyEditDeletedCustomer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m28">FundTransferTest:verifyFundTransfer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m29">DeleteCustomerTest:verifyDeleteCustomer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m30">LoginSectionTest:verifyLoginProcess</h2>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
 <tr class="param stripe"><td>mngr350709</td>
@@ -370,56 +277,5 @@ Session ID: 9de3aa58b8e38830e5b5a514deeca565
 <td>Guru99 Bank Manager HomePage</td>
 </tr>
 </table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m10">LoginSectionTest:verifyLoginProcess</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>mngr485952</td>
-<td>kdfifenejk</td>
-<td>User or Password is not valid</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m11">LoginSectionTest:verifyLoginProcess</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>mngr350709</td>
-<td>kdfifenejk</td>
-<td>User or Password is not valid</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m12">DeleteCustomerTest:verifyDeleteNonExistingCustomer</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m13">FundTransferTest:verifyFundTransferWithWrongAccountNo</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m14">DeleteCustomerTest:verifyDeleteCustomer</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m15">FundTransferTest:fundTransferToSameAccount</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m16">DeleteAccountTest:verifyMiniStatementForDeletedAccount</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m17">DeleteAccountTest:verifyConfirmationMessage</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m18">LoginSectionTest:verifyLoginProcess</h2>
-<table cellspacing="0" cellpadding="0" class="result">
-<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
-<tr class="param stripe"><td>mngr485952</td>
-<td>123456&amp;</td>
-<td>User or Password is not valid</td>
-</tr>
-</table>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m19">FundTransferTest:verifyFundTransferWhenAccountBalanceLow</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m20">DeleteCustomerTest:verifyConfirmationMessage</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m21">FundTransferTest:verifyFundTransferToAbsentAccount</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m22">DeleteAccountTest:verifySystemBehaviour</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m23">DeleteAccountTest:verifyBalanceForDeletedAccount</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m24">DeleteCustomerTest:verifyDeletionOfCustomerHavingAccount</h2>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

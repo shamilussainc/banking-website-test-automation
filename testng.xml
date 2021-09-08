@@ -10,6 +10,8 @@
             <class name="DeleteCustomerTest"/>
             <class name="FundTransferTest"/>
             <class name="EditCustomerTest"/>
+            <class name="DepositTest"/>
+            <class name="WithdrawalTest"/>
 <!--            <class name="ChangePasswordAndLoginTest"/>-->
         </classes>
     </test>

@@ -21,8 +21,11 @@ public class WebAppMethods {
     LocatorDeleteCustomer locatorDeleteCustomer = new LocatorDeleteCustomer();
     LocatorNewAccount locatorNewAccount = new LocatorNewAccount();
     LocatorDeleteAccount locatorDeleteAccount = new LocatorDeleteAccount();
+    LocatorWithdrawal locatorWithdrawal = new LocatorWithdrawal();
+
     InputNewCustomer inputNewCustomer = new InputNewCustomer();
     InputNewAccount inputNewAccount = new InputNewAccount();
+
     Url url = new Url();
 
     public void login(Browser browser,String userId, String password){
@@ -139,5 +142,12 @@ public class WebAppMethods {
         }
     }
 
+    public void withdrew(Browser browser,InputNewAccount account, String amount){
+        browser.driver.findElement(By.xpath(locatorWithdrawal.navIconWithdrawal)).click();
+        browser.driver.findElement(By.xpath(locatorWithdrawal.inputAccountNo)).sendKeys(account.accountId);
+        browser.driver.findElement(By.xpath(locatorWithdrawal.inputAmount)).sendKeys(amount);
+        browser.driver.findElement(By.xpath(locatorWithdrawal.inputDescription)).sendKeys("withdrawal test");
+        browser.driver.findElement(By.xpath(locatorWithdrawal.buttonSubmit)).click();
+    }
 
 }

@@ -5,4 +5,5 @@ public class LocatorMiniStatement {
     public String inputAccountNum = "//input[@name=\"accountno\"]";
     public String buttonSubmit = "//input[@name=\"AccSubmit\"]";
 
+    public String transactionId = "//table[@id=\"ministmt\"]/tbody/tr[2]/td[1]";
 }
